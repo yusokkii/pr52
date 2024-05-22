@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="author1">Д. Лихачев</button>
+    <button id="author2">Горацій</button>
+    <button id="author3">Цицерон</button>
+    <button id="author4">М. Шумило</button>
+    <button id="author5">Ч. Айтматов</button>
+    <div class="quote" id="quoteDisplay"></div>
+
+    <script>
+        // Вислови авторів
+        const quotes = {
+            "author1": { name: "Д. Лихачев", quote: "Усвідомлена любов до свого народу не поєднується зненавистю до інших." },
+            "author2": { name: "Горацій", quote: "Ті, що виїздять за море, міняють небо, а не душу." },
+            "author3": { name: "Цицерон", quote: "Для нас дорогі батьки, дорогі діти, близькі, родичі; але всі уявлення про любов до чого-небудь поєднані в одному слові «вітчизна»." },
+            "author4": { name: "М. Шумило", quote: "Мова — це глибина тисячоліть." },
+            "author5": { name: "Ч. Айтматов", quote: "Той, хто в біді кидає свій народ, стає його ворогом." }
+        };
+
+        // Додаємо обробники подій до кнопок
+        document.getElementById("author1").addEventListener("click", function() {
+            displayQuote("author1");
+        });
+        document.getElementById("author2").addEventListener("click", function() {
+            displayQuote("author2");
+        });
+        document.getElementById("author3").addEventListener("click", function() {
+            displayQuote("author3");
+        });
+        document.getElementById("author4").addEventListener("click", function() {
+            displayQuote("author4");
+        });
+        document.getElementById("author5").addEventListener("click", function() {
+            displayQuote("author5");
+        });
+
+        // Функція для відображення вислову
+        function displayQuote(authorId) {
+            const author = quotes[authorId];
+            alert("Вислів " + author.name + ": " + author.quote);
+            document.getElementById("quoteDisplay").innerText =  author.quote;
+        }
+    </script>
+</body>
+</html>
